@@ -3,3 +3,6 @@ numpy
 matplotlib
 folium
 jupyter
+streamlit          <-- ADD THIS
+streamlit-folium   <-- ADD THIS (likely needed for maps)
+plotly             <-- ADD THIS (if used)

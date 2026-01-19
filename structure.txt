@@ -4,6 +4,7 @@
 TeamSentinel_AadhaarSentinel/
 ├── Code/
 │   ├── aadhaar_sentinel_analysis.ipynb   # Main Analytics Engine (Jupyter Notebook)
+│   ├── dashboard.py
 │   └── requirements.txt                  # Python dependencies
 │
 ├── Outputs/
@@ -14,6 +15,7 @@ TeamSentinel_AadhaarSentinel/
 │
 ├── Presentation/
 │   ├── findings.md                       # Detailed Analysis of Top 5 Findings
+│   ├── Aadhar_Sentinel_Report.pdf         
 │   └── Aadhaar_Sentinel_Slides.pdf       # Project Presentation
 │
 └── README.md                             # Project Documentation
