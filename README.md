@@ -82,7 +82,7 @@ pip install -r 01_Code/requirements.txt
 * MBU Campaign: Supports the 6 Crore Biometric Update goal by identifying capacity bottlenecks (High PNA) for targeted kit deployment.
 * Operational Intelligence: Provides a Geospatial Dashboard for District Magistrates to view real-time risk heatmaps.
 
----
+----
 
 ## Contributors
 
