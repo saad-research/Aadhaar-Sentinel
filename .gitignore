@@ -1,0 +1,15 @@
+# Ignore huge datasets
+*.csv
+*.zip
+
+# Keep the output CSVs if they are small, otherwise ignore them too:
+# 02_Outputs/*.csv
+
+# Ignore Mac/Windows system files
+.DS_Store
+Thumbs.db
+
+# Ignore python cache
+__pycache__/
+*.pyc
+.ipynb_checkpoints/

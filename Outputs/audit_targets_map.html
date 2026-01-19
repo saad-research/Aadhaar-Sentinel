@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_98f11e35aecb72ede6af875f27160ca2 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+
+            <style>html, body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            </style>
+
+            <style>#map {
+                position:absolute;
+                top:0;
+                bottom:0;
+                right:0;
+                left:0;
+                }
+            </style>
+
+            <script>
+                L_NO_TOUCH = false;
+                L_DISABLE_3D = false;
+            </script>
+
+        
+</head>
+<body>
+    
+    
+<div style="position: fixed;
+     bottom: 50px; left: 50px; width: 240px; height: 160px;
+     border:2px solid grey; z-index:9999; font-size:14px;
+     background-color:white; padding:10px; opacity:0.95; box-shadow: 2px 2px 5px grey;">
+<b>🎯 Audit Priority Legend</b><br>
+<i style="background:#800080;width:12px;height:12px;display:inline-block;border-radius:50%;"></i>
+<b>CRITICAL DUAL RISK</b><br>
+<i style="background:#8B0000;width:12px;height:12px;display:inline-block;border-radius:50%;"></i>
+<b>Integrity Target</b><br>
+<i style="background:#003366;width:12px;height:12px;display:inline-block;border-radius:50%;"></i>
+<b>Capacity Target</b><br>
+<i style="background:#F4D03F;width:12px;height:12px;display:inline-block;border-radius:50%;"></i>
+<b>Moderate Risk</b><br>
+<small><i>Target size scaled by cluster density</i></small>
+</div>
+    
+            <div class="folium-map" id="map_98f11e35aecb72ede6af875f27160ca2" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_98f11e35aecb72ede6af875f27160ca2 = L.map(
+                "map_98f11e35aecb72ede6af875f27160ca2",
+                {
+                    center: [22.5937, 78.9629],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 5,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_bc6e38ab1952ab89ef5c120943d4f508 = L.tileLayer(
+                "https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 20,
+  "maxNativeZoom": 20,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors \u0026copy; \u003ca href=\"https://carto.com/attributions\"\u003eCARTO\u003c/a\u003e",
+  "subdomains": "abcd",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_bc6e38ab1952ab89ef5c120943d4f508.addTo(map_98f11e35aecb72ede6af875f27160ca2);
+        
+    
+            var circle_marker_72a0a088d33809157275fe09a194cc29 = L.circleMarker(
+                [28.65346411, 77.0634152],
+                {"bubblingMouseEvents": true, "color": "#800080", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#800080", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 24.225621794871795, "stroke": true, "weight": 3}
+            ).addTo(map_98f11e35aecb72ede6af875f27160ca2);
+        
+    
+        var popup_cab9e95ab2259c57678db28b45a8631a = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_e45c7ec21ae6df58c2f294ece107de0d = $(`<div id="html_e45c7ec21ae6df58c2f294ece107de0d" style="width: 100.0%; height: 100.0%;"><b>TARGET: WEST DELHI</b><br>Type: DUAL CRITICAL<br>Score: 325<br>Max DPR: 12.23<br>Max PNA: 6.11</div>`)[0];
+                popup_cab9e95ab2259c57678db28b45a8631a.setContent(html_e45c7ec21ae6df58c2f294ece107de0d);
+            
+        
+
+        circle_marker_72a0a088d33809157275fe09a194cc29.bindPopup(popup_cab9e95ab2259c57678db28b45a8631a)
+        ;
+
+        
+    
+    
+            var circle_marker_32c5530cd5b94ca6d75dcf430fa3266d = L.circleMarker(
+                [28.83893, 78.77684],
+                {"bubblingMouseEvents": true, "color": "#003366", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#003366", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 23.957490587546303, "stroke": true, "weight": 3}
+            ).addTo(map_98f11e35aecb72ede6af875f27160ca2);
+        
+    
+        var popup_fe3aaf45d2485a7bbec46a84001b75c1 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_6995ea307996ebc636525d1435f11585 = $(`<div id="html_6995ea307996ebc636525d1435f11585" style="width: 100.0%; height: 100.0%;"><b>TARGET: MORADABAD</b><br>Type: Capacity Risk<br>Score: 319<br>Max DPR: 1.26<br>Max PNA: 6.32</div>`)[0];
+                popup_fe3aaf45d2485a7bbec46a84001b75c1.setContent(html_6995ea307996ebc636525d1435f11585);
+            
+        
+
+        circle_marker_32c5530cd5b94ca6d75dcf430fa3266d.bindPopup(popup_fe3aaf45d2485a7bbec46a84001b75c1)
+        ;
+
+        
+    
+    
+            var circle_marker_9ef182c08e1ecfe7d7e47fd51c3274dc = L.circleMarker(
+                [28.71789793, 77.25367264],
+                {"bubblingMouseEvents": true, "color": "#003366", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#003366", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 21.672536041827378, "stroke": true, "weight": 3}
+            ).addTo(map_98f11e35aecb72ede6af875f27160ca2);
+        
+    
+        var popup_76a83aeb80b1e18480fe30c68ba92c3a = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_cb2cbb563b871989fd781f1aba56c0a0 = $(`<div id="html_cb2cbb563b871989fd781f1aba56c0a0" style="width: 100.0%; height: 100.0%;"><b>TARGET: NORTH EAST DELHI</b><br>Type: Capacity Risk<br>Score: 273<br>Max DPR: 1.64<br>Max PNA: 5.38</div>`)[0];
+                popup_76a83aeb80b1e18480fe30c68ba92c3a.setContent(html_cb2cbb563b871989fd781f1aba56c0a0);
+            
+        
+
+        circle_marker_9ef182c08e1ecfe7d7e47fd51c3274dc.bindPopup(popup_76a83aeb80b1e18480fe30c68ba92c3a)
+        ;
+
+        
+    
+    
+            var circle_marker_c5a4e4a185ee94a2bb4990f1f8414691 = L.circleMarker(
+                [19.09211, 74.73842],
+                {"bubblingMouseEvents": true, "color": "#8B0000", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#8B0000", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 21.11675, "stroke": true, "weight": 3}
+            ).addTo(map_98f11e35aecb72ede6af875f27160ca2);
+        
+    
+        var popup_2b205218626e3f05c206eae777e2e0e8 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_60ea6933602c5f9d2a7b6470f696cd2a = $(`<div id="html_60ea6933602c5f9d2a7b6470f696cd2a" style="width: 100.0%; height: 100.0%;"><b>TARGET: AHILYANAGAR</b><br>Type: Integrity Risk<br>Score: 262<br>Max DPR: 193.00<br>Max PNA: 0.01</div>`)[0];
+                popup_2b205218626e3f05c206eae777e2e0e8.setContent(html_60ea6933602c5f9d2a7b6470f696cd2a);
+            
+        
+
+        circle_marker_c5a4e4a185ee94a2bb4990f1f8414691.bindPopup(popup_2b205218626e3f05c206eae777e2e0e8)
+        ;
+
+        
+    
+    
+            var circle_marker_b06cc3e256ff36161548cf9e5dadf8c9 = L.circleMarker(
+                [27.88636, 78.07375],
+                {"bubblingMouseEvents": true, "color": "#003366", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#003366", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 20.876689102727287, "stroke": true, "weight": 3}
+            ).addTo(map_98f11e35aecb72ede6af875f27160ca2);
+        
+    
+        var popup_26d01f8559f50f2a22f9d51d5d8c7c1f = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_d8244c16f3b146e885014cf08a916238 = $(`<div id="html_d8244c16f3b146e885014cf08a916238" style="width: 100.0%; height: 100.0%;"><b>TARGET: ALIGARH</b><br>Type: Capacity Risk<br>Score: 258<br>Max DPR: 1.39<br>Max PNA: 5.08</div>`)[0];
+                popup_26d01f8559f50f2a22f9d51d5d8c7c1f.setContent(html_d8244c16f3b146e885014cf08a916238);
+            
+        
+
+        circle_marker_b06cc3e256ff36161548cf9e5dadf8c9.bindPopup(popup_26d01f8559f50f2a22f9d51d5d8c7c1f)
+        ;
+
+        
+    
+    
+            var circle_marker_9ab4b65e8e728d6b26183c8f88cc69e4 = L.circleMarker(
+                [29.96569, 77.54607],
+                {"bubblingMouseEvents": true, "color": "#003366", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#003366", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 20.50190215228794, "stroke": true, "weight": 3}
+            ).addTo(map_98f11e35aecb72ede6af875f27160ca2);
+        
+    
+        var popup_b8e31df24b63edb989c04a80c873d0b4 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_e854eaa846559019bbc1b505701bade4 = $(`<div id="html_e854eaa846559019bbc1b505701bade4" style="width: 100.0%; height: 100.0%;"><b>TARGET: SAHARANPUR</b><br>Type: Capacity Risk<br>Score: 250<br>Max DPR: 1.24<br>Max PNA: 4.92</div>`)[0];
+                popup_b8e31df24b63edb989c04a80c873d0b4.setContent(html_e854eaa846559019bbc1b505701bade4);
+            
+        
+
+        circle_marker_9ab4b65e8e728d6b26183c8f88cc69e4.bindPopup(popup_b8e31df24b63edb989c04a80c873d0b4)
+        ;
+
+        
+    
+    
+            var circle_marker_840219ba983b5f9b67c229b1bdfb1709 = L.circleMarker(
+                [27.15211, 78.39466],
+                {"bubblingMouseEvents": true, "color": "#003366", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#003366", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 20.349097505116944, "stroke": true, "weight": 3}
+            ).addTo(map_98f11e35aecb72ede6af875f27160ca2);
+        
+    
+        var popup_b15328505e74a43cbcca13c25bc81621 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_d8f86f362ed9a781564cd273e84556b2 = $(`<div id="html_d8f86f362ed9a781564cd273e84556b2" style="width: 100.0%; height: 100.0%;"><b>TARGET: FIROZABAD</b><br>Type: Capacity Risk<br>Score: 247<br>Max DPR: 1.76<br>Max PNA: 4.86</div>`)[0];
+                popup_b15328505e74a43cbcca13c25bc81621.setContent(html_d8f86f362ed9a781564cd273e84556b2);
+            
+        
+
+        circle_marker_840219ba983b5f9b67c229b1bdfb1709.bindPopup(popup_b15328505e74a43cbcca13c25bc81621)
+        ;
+
+        
+    
+    
+            var circle_marker_19a2833b350cbeb6ecd06d535af53d56 = L.circleMarker(
+                [28.77825, 79.02556],
+                {"bubblingMouseEvents": true, "color": "#003366", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#003366", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 19.01676369477535, "stroke": true, "weight": 3}
+            ).addTo(map_98f11e35aecb72ede6af875f27160ca2);
+        
+    
+        var popup_2c60a94e5edfcad0225085bda60d6131 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_4fb147aea258644728f0d59c141ac867 = $(`<div id="html_4fb147aea258644728f0d59c141ac867" style="width: 100.0%; height: 100.0%;"><b>TARGET: RAMPUR</b><br>Type: Capacity Risk<br>Score: 220<br>Max DPR: 1.78<br>Max PNA: 4.27</div>`)[0];
+                popup_2c60a94e5edfcad0225085bda60d6131.setContent(html_4fb147aea258644728f0d59c141ac867);
+            
+        
+
+        circle_marker_19a2833b350cbeb6ecd06d535af53d56.bindPopup(popup_2c60a94e5edfcad0225085bda60d6131)
+        ;
+
+        
+    
+    
+            var circle_marker_f114a9252fc2e70906f290a9c137b0ee = L.circleMarker(
+                [28.76866605, 77.08456027],
+                {"bubblingMouseEvents": true, "color": "#003366", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#003366", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 18.946813328280392, "stroke": true, "weight": 3}
+            ).addTo(map_98f11e35aecb72ede6af875f27160ca2);
+        
+    
+        var popup_f354318f7c23e8205144f66c677c5482 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_145239851de0d3a34232c013ce7bc834 = $(`<div id="html_145239851de0d3a34232c013ce7bc834" style="width: 100.0%; height: 100.0%;"><b>TARGET: NORTH WEST DELHI</b><br>Type: Capacity Risk<br>Score: 219<br>Max DPR: 2.11<br>Max PNA: 4.16</div>`)[0];
+                popup_f354318f7c23e8205144f66c677c5482.setContent(html_145239851de0d3a34232c013ce7bc834);
+            
+        
+
+        circle_marker_f114a9252fc2e70906f290a9c137b0ee.bindPopup(popup_f354318f7c23e8205144f66c677c5482)
+        ;
+
+        
+    
+    
+            var circle_marker_67ce8d7a82c3281fb5eb88b37a0b5b1f = L.circleMarker(
+                [19.19704, 72.96355],
+                {"bubblingMouseEvents": true, "color": "#003366", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#003366", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 18.387258512544804, "stroke": true, "weight": 3}
+            ).addTo(map_98f11e35aecb72ede6af875f27160ca2);
+        
+    
+        var popup_39062e98273799e42840bf281afa5e68 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_871ebd7523e20d83d7652838d1d96031 = $(`<div id="html_871ebd7523e20d83d7652838d1d96031" style="width: 100.0%; height: 100.0%;"><b>TARGET: THANE</b><br>Type: Capacity Risk<br>Score: 208<br>Max DPR: 2.18<br>Max PNA: 3.97</div>`)[0];
+                popup_39062e98273799e42840bf281afa5e68.setContent(html_871ebd7523e20d83d7652838d1d96031);
+            
+        
+
+        circle_marker_67ce8d7a82c3281fb5eb88b37a0b5b1f.bindPopup(popup_39062e98273799e42840bf281afa5e68)
+        ;
+
+        
+    
+    
+            var circle_marker_e21a1bb4e7c48567fa7ab13345f3a3ad = L.circleMarker(
+                [19.87016, 75.346],
+                {"bubblingMouseEvents": true, "color": "#003366", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#003366", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 18.234643372493935, "stroke": true, "weight": 3}
+            ).addTo(map_98f11e35aecb72ede6af875f27160ca2);
+        
+    
+        var popup_dd0b145bc5a1d7b44489517a347e5c27 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_286315ba557ddc69e268dd40687115be = $(`<div id="html_286315ba557ddc69e268dd40687115be" style="width: 100.0%; height: 100.0%;"><b>TARGET: AURANGABAD</b><br>Type: Capacity Risk<br>Score: 205<br>Max DPR: 0.70<br>Max PNA: 4.02</div>`)[0];
+                popup_dd0b145bc5a1d7b44489517a347e5c27.setContent(html_286315ba557ddc69e268dd40687115be);
+            
+        
+
+        circle_marker_e21a1bb4e7c48567fa7ab13345f3a3ad.bindPopup(popup_dd0b145bc5a1d7b44489517a347e5c27)
+        ;
+
+        
+    
+    
+            var circle_marker_516c92add04afb2bd5c7340b0e04f648 = L.circleMarker(
+                [28.39262, 77.31268],
+                {"bubblingMouseEvents": true, "color": "#003366", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#003366", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 17.70469194479742, "stroke": true, "weight": 3}
+            ).addTo(map_98f11e35aecb72ede6af875f27160ca2);
+        
+    
+        var popup_4d64868f3e427e5f2cdb3c944eea072e = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_d071cabda9553d65fc8004a6b984449e = $(`<div id="html_d071cabda9553d65fc8004a6b984449e" style="width: 100.0%; height: 100.0%;"><b>TARGET: FARIDABAD</b><br>Type: Capacity Risk<br>Score: 194<br>Max DPR: 1.71<br>Max PNA: 3.75</div>`)[0];
+                popup_4d64868f3e427e5f2cdb3c944eea072e.setContent(html_d071cabda9553d65fc8004a6b984449e);
+            
+        
+
+        circle_marker_516c92add04afb2bd5c7340b0e04f648.bindPopup(popup_4d64868f3e427e5f2cdb3c944eea072e)
+        ;
+
+        
+    
+    
+            var circle_marker_7db9e91fc9de47aaf667fd1050cf66b4 = L.circleMarker(
+                [27.85574, 79.91809],
+                {"bubblingMouseEvents": true, "color": "#003366", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#003366", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 17.06370145581561, "stroke": true, "weight": 3}
+            ).addTo(map_98f11e35aecb72ede6af875f27160ca2);
+        
+    
+        var popup_9218eb85f5fdad0d1d70efb32a5f1c3e = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_c7177d54bf00b94cef5f433a18b76466 = $(`<div id="html_c7177d54bf00b94cef5f433a18b76466" style="width: 100.0%; height: 100.0%;"><b>TARGET: SHAHJAHANPUR</b><br>Type: Capacity Risk<br>Score: 181<br>Max DPR: 1.47<br>Max PNA: 3.52</div>`)[0];
+                popup_9218eb85f5fdad0d1d70efb32a5f1c3e.setContent(html_c7177d54bf00b94cef5f433a18b76466);
+            
+        
+
+        circle_marker_7db9e91fc9de47aaf667fd1050cf66b4.bindPopup(popup_9218eb85f5fdad0d1d70efb32a5f1c3e)
+        ;
+
+        
+    
+    
+            var circle_marker_a2cbb3765beceb93a02d1c5fa0aadef0 = L.circleMarker(
+                [29.38747, 76.96825],
+                {"bubblingMouseEvents": true, "color": "#003366", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#003366", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 17.058683838760462, "stroke": true, "weight": 3}
+            ).addTo(map_98f11e35aecb72ede6af875f27160ca2);
+        
+    
+        var popup_c111be36056070ebff2d326962d33731 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_b98605afc853334a1d1b635875585c26 = $(`<div id="html_b98605afc853334a1d1b635875585c26" style="width: 100.0%; height: 100.0%;"><b>TARGET: PANIPAT</b><br>Type: Capacity Risk<br>Score: 181<br>Max DPR: 1.13<br>Max PNA: 3.58</div>`)[0];
+                popup_c111be36056070ebff2d326962d33731.setContent(html_b98605afc853334a1d1b635875585c26);
+            
+        
+
+        circle_marker_a2cbb3765beceb93a02d1c5fa0aadef0.bindPopup(popup_c111be36056070ebff2d326962d33731)
+        ;
+
+        
+    
+    
+            var circle_marker_8a13c568a240dd8fc821f083f61efa0c = L.circleMarker(
+                [28.48368246, 77.19762521],
+                {"bubblingMouseEvents": true, "color": "#003366", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#003366", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 17.021757901064923, "stroke": true, "weight": 3}
+            ).addTo(map_98f11e35aecb72ede6af875f27160ca2);
+        
+    
+        var popup_6bfbc86f451748447b18cc308ebd37c0 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_80e81eadaa706a3af5e63c4559ad2835 = $(`<div id="html_80e81eadaa706a3af5e63c4559ad2835" style="width: 100.0%; height: 100.0%;"><b>TARGET: SOUTH DELHI</b><br>Type: Capacity Risk<br>Score: 180<br>Max DPR: 1.47<br>Max PNA: 3.46</div>`)[0];
+                popup_6bfbc86f451748447b18cc308ebd37c0.setContent(html_80e81eadaa706a3af5e63c4559ad2835);
+            
+        
+
+        circle_marker_8a13c568a240dd8fc821f083f61efa0c.bindPopup(popup_6bfbc86f451748447b18cc308ebd37c0)
+        ;
+
+        
+    
+    
+            var circle_marker_6bdd3d440ea93862718765c5ce89b6e2 = L.circleMarker(
+                [28.66535, 77.43915],
+                {"bubblingMouseEvents": true, "color": "#800080", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#800080", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 17.021250000000002, "stroke": true, "weight": 3}
+            ).addTo(map_98f11e35aecb72ede6af875f27160ca2);
+        
+    
+        var popup_cba37f8fa2e207893408f87cc863e144 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_e9b6861a36ae8ece599d6c13ea8e99b9 = $(`<div id="html_e9b6861a36ae8ece599d6c13ea8e99b9" style="width: 100.0%; height: 100.0%;"><b>TARGET: GHAZIABAD</b><br>Type: DUAL CRITICAL<br>Score: 180<br>Max DPR: 14.67<br>Max PNA: 3.18</div>`)[0];
+                popup_cba37f8fa2e207893408f87cc863e144.setContent(html_e9b6861a36ae8ece599d6c13ea8e99b9);
+            
+        
+
+        circle_marker_6bdd3d440ea93862718765c5ce89b6e2.bindPopup(popup_cba37f8fa2e207893408f87cc863e144)
+        ;
+
+        
+    
+    
+            var circle_marker_c31f94dfecc4bca5519a4443686830a8 = L.circleMarker(
+                [31.63347, 74.87507],
+                {"bubblingMouseEvents": true, "color": "#003366", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#003366", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 16.896939715828104, "stroke": true, "weight": 3}
+            ).addTo(map_98f11e35aecb72ede6af875f27160ca2);
+        
+    
+        var popup_e99d1e69c310c1fc3c82ffad891ab2f5 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_53158ffdf590440a23bebc70826aee01 = $(`<div id="html_53158ffdf590440a23bebc70826aee01" style="width: 100.0%; height: 100.0%;"><b>TARGET: AMRITSAR</b><br>Type: Capacity Risk<br>Score: 178<br>Max DPR: 1.27<br>Max PNA: 3.51</div>`)[0];
+                popup_e99d1e69c310c1fc3c82ffad891ab2f5.setContent(html_53158ffdf590440a23bebc70826aee01);
+            
+        
+
+        circle_marker_c31f94dfecc4bca5519a4443686830a8.bindPopup(popup_e99d1e69c310c1fc3c82ffad891ab2f5)
+        ;
+
+        
+    
+    
+            var circle_marker_634c0966a88c958f954c469e607d265e = L.circleMarker(
+                [28.62279335, 77.29347145],
+                {"bubblingMouseEvents": true, "color": "#003366", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#003366", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 16.57069822073951, "stroke": true, "weight": 3}
+            ).addTo(map_98f11e35aecb72ede6af875f27160ca2);
+        
+    
+        var popup_48f49e2037319b38b7e212ad870f81d4 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_c3b7dac235c1b8bb05b4cfab0f7511d8 = $(`<div id="html_c3b7dac235c1b8bb05b4cfab0f7511d8" style="width: 100.0%; height: 100.0%;"><b>TARGET: EAST DELHI</b><br>Type: Capacity Risk<br>Score: 171<br>Max DPR: 2.26<br>Max PNA: 3.28</div>`)[0];
+                popup_48f49e2037319b38b7e212ad870f81d4.setContent(html_c3b7dac235c1b8bb05b4cfab0f7511d8);
+            
+        
+
+        circle_marker_634c0966a88c958f954c469e607d265e.bindPopup(popup_48f49e2037319b38b7e212ad870f81d4)
+        ;
+
+        
+    
+    
+            var circle_marker_0ea7fa0406daa425abfe71a3fd289a24 = L.circleMarker(
+                [28.63124, 79.80436],
+                {"bubblingMouseEvents": true, "color": "#003366", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#003366", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 16.46429689285063, "stroke": true, "weight": 3}
+            ).addTo(map_98f11e35aecb72ede6af875f27160ca2);
+        
+    
+        var popup_9966d1000b36e6ea3948864a45e33b1d = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_d7f2ffb276263a86c587e23ca718e057 = $(`<div id="html_d7f2ffb276263a86c587e23ca718e057" style="width: 100.0%; height: 100.0%;"><b>TARGET: PILIBHIT</b><br>Type: Capacity Risk<br>Score: 169<br>Max DPR: 1.70<br>Max PNA: 3.29</div>`)[0];
+                popup_9966d1000b36e6ea3948864a45e33b1d.setContent(html_d7f2ffb276263a86c587e23ca718e057);
+            
+        
+
+        circle_marker_0ea7fa0406daa425abfe71a3fd289a24.bindPopup(popup_9966d1000b36e6ea3948864a45e33b1d)
+        ;
+
+        
+    
+    
+            var circle_marker_7b5927323b810d45a726d8f44f83ca86 = L.circleMarker(
+                [28.99862, 77.70459],
+                {"bubblingMouseEvents": true, "color": "#003366", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#003366", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 16.376992256938763, "stroke": true, "weight": 3}
+            ).addTo(map_98f11e35aecb72ede6af875f27160ca2);
+        
+    
+        var popup_8c853316b24141f6c48272a1f05a3b9d = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_7e6254793887961721d9e1c9c56af239 = $(`<div id="html_7e6254793887961721d9e1c9c56af239" style="width: 100.0%; height: 100.0%;"><b>TARGET: MEERUT</b><br>Type: Capacity Risk<br>Score: 168<br>Max DPR: 1.64<br>Max PNA: 3.26</div>`)[0];
+                popup_8c853316b24141f6c48272a1f05a3b9d.setContent(html_7e6254793887961721d9e1c9c56af239);
+            
+        
+
+        circle_marker_7b5927323b810d45a726d8f44f83ca86.bindPopup(popup_8c853316b24141f6c48272a1f05a3b9d)
+        ;
+
+        
+    
+</script>
+</html>

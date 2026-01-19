@@ -1,0 +1,34 @@
+**File structure:**
+```
+TeamSentinel_Submission/
+├── code/
+│   ├── aadhaar_sentinel_core.ipynb
+│   └── dashboard.py
+├── outputs/
+│   ├── outlier_map.html
+│   ├── outliers_v2.csv
+│   └── findings.md
+├── presentation/
+│   ├── Aadhaar_Sentinel.pptx
+│   └── Aadhaar_Sentinel_Report.pdf
+└── README.md
+
+
+
+**Folder Structure:**
+```
+TeamSentinel_AadhaarSentinel/
+├── 01_Code/
+│   ├── aadhaar_sentinel_analysis.ipynb
+│   └── requirements.txt
+├── 02_Outputs/
+│   ├── sentinel_final.csv
+│   ├── outliers_final.csv
+│   ├── district_risk_top20.csv
+│   ├── national_map.html
+│   └── audit_targets_map.html
+├── 03_Presentation/
+│   ├── Aadhaar_Sentinel_Slides.pptx
+│   ├── Aadhaar_Sentinel_Report.pdf
+│   └── findings.md
+└── README.md
