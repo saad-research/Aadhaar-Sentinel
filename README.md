@@ -89,3 +89,4 @@ pip install -r 01_Code/requirements.txt
 **Team Sentinel**
 
 - Mohammed Saad Shareef - Lead Data Scientist & Architect
+- Syed Ahsan Ahmed – Security Lead & Integrity Intelligence
