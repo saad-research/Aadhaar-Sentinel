@@ -55,15 +55,15 @@ Traditional audits focus on "Top 10 by Complaint Volume." This misses hidden ris
 
 Clone the repository:
 
-``
+```
 git clone [https://github.com/saad-research/Aadhaar-Sentinel.git](https://github.com/saad-research/Aadhaar-Sentinel.git)
 cd Aadhaar-Sentinel
-``
+```
 # 2. Install dependencies:
 
-``
+```
 pip install -r 01_Code/requirements.txt
-``
+```
 
 # 3. Run the Analysis:
 
