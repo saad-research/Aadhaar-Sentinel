@@ -82,26 +82,10 @@ pip install -r 01_Code/requirements.txt
 * MBU Campaign: Supports the 6 Crore Biometric Update goal by identifying capacity bottlenecks (High PNA) for targeted kit deployment.
 * Operational Intelligence: Provides a Geospatial Dashboard for District Magistrates to view real-time risk heatmaps.
 
----
+----
 
 ## Contributors
 
 **Team Sentinel**
 
-1. *Mohammed Saad Shareef – Lead Data Scientist & Architect*
-
-    - Designed the dual-metric risk engine (PNA & DPR).
-    - Developed the geospatial analysis pipeline in Python (Pandas/Folium).
-    - Formulated the severity-weighted prioritization logic and generated the critical findings.
-
-2. *Syed Ahsan Ahmed – Security & Policy Analyst*
-    
-    - Defined the "Integrity Risk" threat models and fraud scenarios.
-    - Aligned analytical findings with UIDAI’s security protocols (MBU & Deceased Deactivation).
-    - Authored the strategic recommendations and "Silent Fraud" narrative in the final report.
-
-3. *Siddiqi Abdul Hai – Dashboard & Visualization Lead*
-
-    - Developed the interactive Streamlit application (dashboard.py) for the "Sentinel" interface.
-    - Integrated the geospatial maps and CSV data into the live user interface.
-    - Managed the final presentation design (PPT) and UI/UX workflow.
+- Mohammed Saad Shareef - Lead Data Scientist & Architect
