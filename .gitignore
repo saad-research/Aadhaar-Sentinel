@@ -2,14 +2,22 @@
 *.csv
 *.zip
 
-# Keep the output CSVs if they are small, otherwise ignore them too:
-# 02_Outputs/*.csv
-
 # Ignore Mac/Windows system files
 .DS_Store
 Thumbs.db
 
-# Ignore python cache
+# Data
+data/raw/
+data/processed/
+
+# Colab artifacts
+*.ipynb_checkpoints/
+drive/
+
+# Outputs (regeneratable)
+outputs/maps/*.html
+
+# Python
 __pycache__/
 *.pyc
-.ipynb_checkpoints/
+.env

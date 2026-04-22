@@ -1,21 +1,32 @@
-## Repository Structure
-
-```text
-TeamSentinel_AadhaarSentinel/
-├── Code/
-│   ├── aadhaar_sentinel_analysis.ipynb   # Main Analytics Engine (Jupyter Notebook)
-│   ├── dashboard.py
-│   └── requirements.txt                  # Python dependencies
+aadhaar-sentinel/
 │
-├── Outputs/
-│   ├── sentinel_final.csv                # Processed Dataset (Pincode Level)
-│   ├── district_risk_top20.csv           # Final Audit Priority List
-│   ├── national_map.html                 # Interactive Map 1: All 32k Pincodes
-│   └── audit_targets_map.html            # Interactive Map 2: Top 20 Severity Targets
+├── src/
+│   ├── __init__.py
+│   ├── config.py          # All thresholds, weights, paths — one place
+│   ├── loader.py          # Raw CSV ingestion only
+│   ├── engine.py          # Merging + metric calculation
+│   ├── scoring.py         # Anomaly detection + risk scoring (separate concern)
+│   └── maps.py            # All Folium map generation
+│
+├── data/
+│   ├── raw/               # UIDAI folders go here (gitignored)
+│   └── processed/         # Generated CSVs go here (gitignored)
+│
+├── outputs/
+│   └── maps/              # HTML maps
+│
+├── notebooks/
+│   └── exploration.ipynb  # Keep for EDA/prototyping only, not the pipeline
+│
+├── tests/
+│   └── test_engine.py     # Even basic tests signal engineering maturity
 │
 ├── Presentation/
 │   ├── findings.md                       # Detailed Analysis of Top 5 Findings
-│   ├── Aadhar_Sentinel_Report.pdf         
-│   └── Aadhaar_Sentinel_Slides.pdf       # Project Presentation
-│
-└── README.md                             # Project Documentation
+│   └── Aadhar_Sentinel_Report.pdf         
+│          
+├── app.py                 # Streamlit dashboard
+├── pipeline.py            # Single entry point: run this to regenerate everything
+├── requirements.txt
+├── .gitignore
+└── README.md
